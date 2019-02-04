@@ -1,16 +1,8 @@
-package application;
+package user_interface;
 	
-import data_layer.Card;
-import data_layer.CardAttribute;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 
 
 public class Main extends Application {

@@ -1,4 +1,4 @@
-package application;
+package user_interface;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -23,8 +23,8 @@ import javafx.scene.transform.Scale;
  */
 public class CardUI extends AnchorPane {
 	
-	private final double BIG_SCALE_SIZE = 1.35;
-	private final double SMALL_SCALE_SIZE = 1;
+	private final double BIG_SCALE_SIZE = 1.25;
+	private final double SMALL_SCALE_SIZE = 0.8;
 
 	@FXML private StackPane pane_magickaAndBanner;
 	@FXML private StackPane pane_attributeBig;
@@ -76,6 +76,14 @@ public class CardUI extends AnchorPane {
 			throw new RuntimeException(exception);
 		}
 	}
+	
+	public void makeSmaller() {
+		this.getTransforms().add(new Scale(SMALL_SCALE_SIZE, SMALL_SCALE_SIZE));
+	}
+	
+	public void makeBigger() {
+		this.getTransforms().add(new Scale(BIG_SCALE_SIZE, BIG_SCALE_SIZE));
+	}
 
 	/**
 	 * shows all detail panes and increases size of cardUI
@@ -88,8 +96,6 @@ public class CardUI extends AnchorPane {
 		pane_attributeBig.setVisible(true);
 		pane_attributeSmall.setVisible(false);
 		hbox_effects.setVisible(false);
-		// set correct pane size
-		//this.getTransforms().add(new Scale(BIG_SCALE_SIZE, BIG_SCALE_SIZE));
 	}
 
 	/**
@@ -103,8 +109,6 @@ public class CardUI extends AnchorPane {
 		pane_attributeBig.setVisible(false);
 		pane_attributeSmall.setVisible(true);
 		hbox_effects.setVisible(true);
-		// set correct pane size
-		this.getTransforms().add(new Scale(SMALL_SCALE_SIZE, SMALL_SCALE_SIZE));
 	}
 
 	/**

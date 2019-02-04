@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root style="-fx-background-color: black;" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox fx:id="vbox_boardAndHand">
+         <children>
+            <StackPane>
+               <children>
+                  <ImageView fitHeight="840.0" fitWidth="1700.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/resources/gameboard/board_background_cropped2.jpg" />
+                     </image>
+                  </ImageView>
+                  <BorderPane maxWidth="1400.0">
+                     <center>
+                        <StackPane BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="800.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/lens.png" />
+                                 </image>
+                              </ImageView>
+                              <AnchorPane>
+                                 <children>
+                                    <StackPane AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="380.0" AnchorPane.topAnchor="25.0">
+                                       <children>
+                                          <Button minHeight="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-background-color: #262a33;">
+                                             <graphic>
+                                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../../../../Desktop/resources/profile_pictures/profile_2.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                             <StackPane.margin>
+                                                <Insets bottom="6.0" />
+                                             </StackPane.margin>
+                                          </Button>
+                                          <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/profile_border.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/profile_rune_border_4.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/profile_health_banner.png" />
+                                             </image>
+                                          </ImageView>
+                                          <AnchorPane>
+                                             <StackPane.margin>
+                                                <Insets bottom="9.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <Label fx:id="label_keywords21" alignment="CENTER" text="24" textAlignment="CENTER" textFill="#e4dfb4" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0">
+                                                   <font>
+                                                      <Font name="Cambria Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane layoutX="380.0" layoutY="686.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="380.0">
+                                       <children>
+                                          <Button minHeight="100.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-background-color: #262a33;">
+                                             <graphic>
+                                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../../../../../Desktop/resources/profile_pictures/profile_1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <effect>
+                                                <InnerShadow />
+                                             </effect>
+                                             <StackPane.margin>
+                                                <Insets bottom="6.0" />
+                                             </StackPane.margin>
+                                          </Button>
+                                          <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/profile_border.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/profile_rune_border_2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/profile_health_banner.png" />
+                                             </image>
+                                          </ImageView>
+                                          <AnchorPane>
+                                             <StackPane.margin>
+                                                <Insets bottom="9.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <Label fx:id="label_keywords2" alignment="CENTER" text="13" textAlignment="CENTER" textFill="#e4dfb4" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0">
+                                                   <font>
+                                                      <Font name="Cambria Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </StackPane>
+                     </center>
+                     <right>
+                        <StackPane>
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/lens.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="-50.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </ImageView>
+                                    <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/lens.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="-50.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </ImageView>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </VBox>
+                              <StackPane>
+                                 <children>
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/gameboard/wood_circle.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/final_resources/lane_shadow_icon.png" />
+                                       </image>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </ImageView>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </StackPane>
+                           </children>
+                        </StackPane>
+                     </right>
+                     <left>
+                        <StackPane BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/lens.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="-50.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </ImageView>
+                                    <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/lens.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="-50.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </ImageView>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </VBox>
+                              <StackPane>
+                                 <children>
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/gameboard/wood_circle.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/final_resources/lane_field_icon.png" />
+                                       </image>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </ImageView>
+                                 </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </StackPane>
+                           </children>
+                        </StackPane>
+                     </left>
+                  </BorderPane>
+                  <AnchorPane maxHeight="876.0" maxWidth="1700.0">
+                     <children>
+                        <VBox layoutX="1600.0" layoutY="740.0" spacing="5.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                 <children>
+                                    <Button minHeight="40.0" minWidth="40.0" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-background-color: #262a33; -fx-border-color: #4f6cb5; -fx-border-radius: 40;">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/skull_icon.png" />
+                                             </image>
+                                             <effect>
+                                                <ColorAdjust brightness="0.55" contrast="-0.5" hue="0.33" saturation="1.0" />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <StackPane fx:id="pane_magicka" maxHeight="25.0">
+                                       <children>
+                                          <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/magicka_crystal.png" />
+                                             </image>
+                                          </ImageView>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label graphicTextGap="0.0" text="12">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Heavy" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label graphicTextGap="0.0" text="/">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Heavy" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label graphicTextGap="0.0" text="12">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Heavy" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <effect>
+                                                <DropShadow color="WHITE" />
+                                             </effect>
+                                          </HBox>
+                                       </children>
+                                    </StackPane>
+                                    <Button minHeight="80.0" minWidth="80.0" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-background-color: #262a33; -fx-border-color: #4f6cb5; -fx-border-radius: 40;">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/arrow.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER" spacing="6.0">
+                                       <children>
+                                          <ImageView fx:id="imageView_attributeSmall" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/attribute_willpower_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imageView_attributeSmall1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/attribute_strength_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imageView_attributeSmall2" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/attribute_endurance_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </HBox>
+                                    <Label fx:id="label_keywords" alignment="CENTER" text="QuayQuayBussacap" textAlignment="CENTER" textFill="#e4dfb4" wrapText="true">
+                                       <font>
+                                          <Font name="Cambria Bold" size="23.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox spacing="5.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER" spacing="6.0">
+                                       <children>
+                                          <ImageView fx:id="imageView_attributeSmall1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/attribute_agility_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imageView_attributeSmall11" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/attribute_agility_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imageView_attributeSmall21" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/attribute_willpower_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </HBox>
+                                    <Label fx:id="label_keywords1" alignment="CENTER" text="FuegoAmigo" textAlignment="CENTER" textFill="#e4dfb4" wrapText="true">
+                                       <font>
+                                          <Font name="Cambria Bold" size="23.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                 <children>
+                                    <Button minHeight="40.0" minWidth="40.0" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-background-color: #262a33; -fx-border-color: #4f6cb5; -fx-border-radius: 40;">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/skull_icon.png" />
+                                             </image>
+                                             <effect>
+                                                <ColorAdjust brightness="0.55" contrast="-0.5" hue="0.33" saturation="1.0" />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <StackPane fx:id="pane_magicka1" maxHeight="25.0">
+                                       <children>
+                                          <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/magicka_crystal.png" />
+                                             </image>
+                                          </ImageView>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label graphicTextGap="0.0" text="12">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Heavy" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label graphicTextGap="0.0" text="/">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Heavy" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label graphicTextGap="0.0" text="12">
+                                                   <font>
+                                                      <Font name="Franklin Gothic Heavy" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <effect>
+                                                <DropShadow color="WHITE" />
+                                             </effect>
+                                          </HBox>
+                                       </children>
+                                    </StackPane>
+                                    <Button minHeight="80.0" minWidth="80.0" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-background-color: #262a33; -fx-border-color: #4f6cb5; -fx-border-radius: 40;">
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/resources/final_resources/arrow.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <VBox fx:id="pane_battleLanes" maxHeight="450.0" maxWidth="1300.0" spacing="20.0" />
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </center>
+</fx:root>
