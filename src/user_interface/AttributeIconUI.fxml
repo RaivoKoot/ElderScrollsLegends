@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<fx:root type="javafx.scene.image.ImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <image>
+      <Image url="@../../../../../Desktop/resources/final_resources/attribute_willpower_icon.png" />
+   </image>
+</fx:root>

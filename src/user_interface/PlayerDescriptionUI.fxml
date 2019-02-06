@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root spacing="5.0" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button minHeight="40.0" minWidth="40.0" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-background-color: #262a33; -fx-border-color: #4f6cb5; -fx-border-radius: 40;">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/resources/final_resources/skull_icon.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="0.55" contrast="-0.5" hue="0.33" saturation="1.0" />
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <StackPane fx:id="pane_magicka" maxHeight="25.0">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/resources/final_resources/magicka_crystal.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="label_currentMagicka" graphicTextGap="0.0" text="-1">
+                           <font>
+                              <Font name="Franklin Gothic Heavy" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label graphicTextGap="0.0" text="/">
+                           <font>
+                              <Font name="Franklin Gothic Heavy" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_maxMagicka" graphicTextGap="0.0" text="-1">
+                           <font>
+                              <Font name="Franklin Gothic Heavy" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="WHITE" />
+                     </effect>
+                  </HBox>
+               </children>
+            </StackPane>
+            <Button minHeight="80.0" minWidth="80.0" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-background-color: #262a33; -fx-border-color: #4f6cb5; -fx-border-radius: 40;">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/resources/final_resources/arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <HBox fx:id="hbox_attributes" alignment="CENTER" spacing="6.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <Label fx:id="label_playerName" alignment="CENTER" text="QuayQuayBussacap" textAlignment="CENTER" textFill="#e4dfb4" wrapText="true">
+               <font>
+                  <Font name="Cambria Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</fx:root>
