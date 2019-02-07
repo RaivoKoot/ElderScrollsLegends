@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import view.BattleLanesUI?>
+<?import view.PlayerDescriptionUI?>
+<?import view.PlayerTowerUI?>
+
+<fx:root id="narrowscreen" stylesheets="@CentralArenaUI.css" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <StackPane id="background" fx:id="stackPane_arena" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <BorderPane maxWidth="1400.0">
+               <center>
+                  <StackPane BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="800.0" fitWidth="100.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/resources/lens.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane>
+                           <children>
+                              <VBox fx:id="vbox_opponentPlayerTower" layoutX="380.0" layoutY="25.0" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="380.0" AnchorPane.topAnchor="25.0">
+                              	<PlayerTowerUI fx:id="opponentPlayerTower" />
+                              </VBox>
+                              <VBox fx:id="vbox_playerTower" layoutX="380.0" layoutY="666.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="380.0">
+                              	<PlayerTowerUI fx:id="playerTower" />
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </StackPane>
+               </center>
+               <right>
+                  <StackPane>
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/lens.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets bottom="-50.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/lens.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets top="-50.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ImageView>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </VBox>
+                        <StackPane>
+                           <children>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/gameboard/wood_circle.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/final_resources/lane_shadow_icon.png" />
+                                 </image>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ImageView>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </StackPane>
+                     </children>
+                  </StackPane>
+               </right>
+               <left>
+                  <StackPane BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/lens.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets bottom="-50.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/lens.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets top="-50.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ImageView>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </VBox>
+                        <StackPane>
+                           <children>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/gameboard/wood_circle.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/final_resources/lane_field_icon.png" />
+                                 </image>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ImageView>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </StackPane>
+                     </children>
+                  </StackPane>
+               </left>
+            </BorderPane>
+            <AnchorPane>
+               <children>
+                  <VBox layoutX="1366.0" layoutY="698.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                  	<PlayerDescriptionUI fx:id="vbox_playerDescription" />
+                  </VBox>
+                  <VBox layoutX="1440.0" layoutY="11.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                  	<PlayerDescriptionUI fx:id="vbox_opponentPlayerDescription" />
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <VBox maxHeight="450.0" maxWidth="1300.0" spacing="20.0">
+            	<BattleLanesUI fx:id="battleLanesUI_opponent" />
+            	<BattleLanesUI fx:id="battleLanesUI_friendlyPlayer" />
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</fx:root>

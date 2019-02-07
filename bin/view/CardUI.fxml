@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root maxHeight="188.0" maxWidth="128.0" prefHeight="188.0" prefWidth="128.0" style="-fx-background-color: transparent;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutX="-2.0" layoutY="-2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imageView_guardborder" fitHeight="180.0" fitWidth="128.0" pickOnBounds="true" visible="false">
+               <image>
+                  <Image url="@../../../../../Desktop/resources/final_resources/guard_border.png" />
+               </image>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0" />
+               </effect>
+            </ImageView>
+            <StackPane maxHeight="150.0" maxWidth="100.0" style="-fx-border-color: black; -fx-background-color: black;">
+               <children>
+                  <ImageView fitHeight="152.0" fitWidth="100.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/resources/3D3ZWug%20-%20Copy%20Cropped.jpg" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="pane_detailview" maxHeight="152.0" maxWidth="100.0" visible="false">
+                     <children>
+                        <StackPane maxHeight="40.0" maxWidth="100.0" AnchorPane.bottomAnchor="-1.0">
+                           <children>
+                              <ImageView fx:id="imageView_descriptionBackground" fitHeight="50.0" fitWidth="100.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../../../Desktop/resources/final_resources/texture_blue.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox maxWidth="100.0">
+                                 <children>
+                                    <Label fx:id="label_keywords" alignment="CENTER" prefWidth="100.0" text="Rally, Regenerate, Drain" textAlignment="CENTER" textFill="#e4dfb4" wrapText="true" VBox.vgrow="NEVER">
+                                       <font>
+                                          <Font name="Cambria Bold" size="7.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="1.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="label_description" alignment="TOP_CENTER" prefHeight="37.0" prefWidth="100.0" text="If you started the game with no duplicate cards in your deck, you gain 5 health and restore a rune." textAlignment="CENTER" textFill="#d7d083" wrapText="true">
+                                       <font>
+                                          <Font name="Bodoni MT" size="6.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="4.0" right="4.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <StackPane prefHeight="15.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fx:id="imageView_nameBackground" fitHeight="15.0" fitWidth="100.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../../../../Desktop/resources/final_resources/texture_blue.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="label_name" alignment="CENTER" prefHeight="15.0" prefWidth="100.0" text="Bloodline Outcast" textFill="#d7d083">
+                                       <font>
+                                          <Font name="Bodoni MT" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <Label fx:id="label_type" style="-fx-background-color: #353427; -fx-background-radius: 5;" text="Breton" textFill="#d7d083">
+                                 <font>
+                                    <Font name="Bodoni MT" size="4.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="152.0" fitWidth="100.0" opacity="0.65" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/resources/output-onlinepngtools.png" />
+                     </image>
+                     <effect>
+                        <Shadow>
+                           <input>
+                              <SepiaTone />
+                           </input>
+                        </Shadow>
+                     </effect>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </StackPane>
+            <ImageView fx:id="imageView_legendaryborder" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" visible="false">
+               <image>
+                  <Image url="@../../../../../Desktop/resources/final_resources/border_legendary.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets top="-2.0" />
+               </StackPane.margin>
+               <effect>
+                  <DropShadow height="15.0" radius="7.0" width="15.0" />
+               </effect>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutY="91.0" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="81.0">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/resources/final_resources/damage.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="text_damage" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets right="1.0" top="1.0" />
+               </StackPane.margin></Text>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </StackPane>
+      <StackPane layoutY="91.0" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+         <children>
+            <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/resources/final_resources/armor.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="text_health" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
+               <StackPane.margin>
+                  <Insets bottom="1.0" right="1.0" />
+               </StackPane.margin></Text>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </StackPane>
+      <HBox fx:id="hbox_keywords" alignment="CENTER" prefWidth="70.0" spacing="1.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <effect>
+            <DropShadow />
+         </effect></HBox>
+      <StackPane fx:id="pane_magickaAndAttribute" alignment="BOTTOM_CENTER" layoutX="5.0" layoutY="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <StackPane fx:id="pane_magickaAndBanner" alignment="TOP_CENTER" visible="false">
+               <children>
+                  <ImageView fx:id="imageView_attributeBanner" fitHeight="30.0" fitWidth="20.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../resources/card/attribute_banner.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets top="10.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <StackPane fx:id="pane_magicka" maxHeight="20.0" maxWidth="20.0" prefHeight="20.0" prefWidth="20.0">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/card/magicka_crystal.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="text_magicka" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER">
+                           <font>
+                              <Font name="Franklin Gothic Heavy" size="11.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </StackPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="pane_attributeBig" maxHeight="8.0" maxWidth="8.0" prefHeight="8.0" prefWidth="8.0" visible="false">
+               <children>
+                  <ImageView fx:id="imageView_attribute" fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/card/magicka_crystal.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="1.0" />
+               </StackPane.margin>
+            </StackPane>
+            <StackPane fx:id="pane_attributeSmall" alignment="BOTTOM_CENTER" maxHeight="15.0" prefHeight="20.0" prefWidth="25.0" StackPane.alignment="TOP_CENTER">
+               <children>
+                  <ImageView fx:id="imageView_attributeBanner1" fitHeight="15.0" fitWidth="23.0" pickOnBounds="true" StackPane.alignment="TOP_CENTER">
+                     <image>
+                        <Image url="@../resources/card/attribute_banner.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets top="7.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <StackPane fx:id="pane_magicka21" maxHeight="7.0" maxWidth="7.0">
+                     <children>
+                        <ImageView fx:id="imageView_attributeSmall" fitHeight="7.0" fitWidth="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/card/magicka_crystal.png" />
+                           </image>
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </ImageView>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="1.0" />
+                     </StackPane.margin>
+                  </StackPane>
+               </children>
+               <StackPane.margin>
+                  <Insets left="6.0" />
+               </StackPane.margin>
+            </StackPane>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </StackPane>
+      <ImageView fx:id="imageView_wardBubble" fitHeight="188.0" fitWidth="128.0" opacity="0.45" pickOnBounds="true" visible="false">
+         <effect>
+            <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="10.0">
+               <light>
+                  <Light.Distant color="#00e4ff" />
+               </light>
+            </Lighting>
+         </effect>
+         <image>
+            <Image url="@../resources/card/ward_bubble.gif" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>
