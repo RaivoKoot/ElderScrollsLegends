@@ -9,7 +9,7 @@ public class DeckList {
 	// TESTING
 	public DeckList() {
 		attributes = new ArrayList<CardAttribute>();
-		addAttribute(CardAttribute.STRENGTH);
+		addAttribute(CardAttribute.ENDURANCE);
 		addAttribute(CardAttribute.INTELLIGENCE);
 	}
 

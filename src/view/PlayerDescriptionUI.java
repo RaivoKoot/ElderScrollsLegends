@@ -9,15 +9,20 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.CardAttribute;
 import model.DeckList;
+import model.HealthData;
 import model.MagickaData;
+import model.Observer;
 import model.PlayerBaseData;
+import model.Subject;
 
-public class PlayerDescriptionUI extends VBox {
+public class PlayerDescriptionUI extends VBox implements Observer{
 	
 	@FXML Label label_currentMagicka;
 	@FXML Label label_maxMagicka;
 	@FXML Label label_playerName;
 	@FXML HBox hbox_attributes;
+	
+	private Subject subject;
 	
 	public PlayerDescriptionUI()
 	{
@@ -38,12 +43,12 @@ public class PlayerDescriptionUI extends VBox {
 		}
 	}
 	
-	public void fillUI(MagickaData magickaData, DeckList deckAttributes, PlayerBaseData player) {
+	public void assignUISources(MagickaData magickaData, DeckList deckAttributes, PlayerBaseData player) {
 		assignAttributes(deckAttributes);
-		updateMagickaLabels(magickaData);
 		changeName(player.getName());
-		//TODO
-		// setName()
+		
+		setSubject(magickaData);
+		update();
 	}
 	
 	private void changeName(String name) {
@@ -64,6 +69,22 @@ public class PlayerDescriptionUI extends VBox {
 	
 	public void reversePaneOrder() {
 		this.getChildren().get(0).toFront();
+	}
+
+	@Override
+	public void update()
+	{
+		MagickaData update = (MagickaData) this.subject.getUpdate(this);
+		
+		updateMagickaLabels(update);
+
+	}
+
+	@Override
+	public void setSubject(Subject sub)
+	{
+		this.subject = sub;
+		subject.register(this);
 	}
 	
 	

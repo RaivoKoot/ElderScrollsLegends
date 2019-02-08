@@ -3,7 +3,6 @@ package view;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -72,30 +71,12 @@ public class CardUI extends AnchorPane {
 
 			// assign correct texture colors
 			assignTextures();
-			assignKeywordIcons(card.getKeywords());
+			updateKeywordIcons(card.getKeywords());
 
 		} catch (IOException exception)
 		{
 			throw new RuntimeException(exception);
 		}
-	}
-
-	private void assignKeywordIcons(ArrayList<Keyword> keywords)
-	{
-		for (Keyword keyword : keywords)
-		{
-			// special case for the ward keyword
-			if (keyword == Keyword.WARD)
-				showWardBubble();
-			else if (keyword == Keyword.GUARD)
-				showGuardBorder();
-			else
-			{
-				IconUI keywordUI = new IconUI(keyword);
-				hbox_keywords.getChildren().add(keywordUI);
-			}
-		}
-
 	}
 
 	public void makeSmaller()
@@ -152,6 +133,26 @@ public class CardUI extends AnchorPane {
 		imageView_descriptionBackground.setImage(background_texture);
 		imageView_attribute.setImage(icon_foto);
 		imageView_attributeSmall.setImage(icon_foto);
+	}
+	
+	private void updateKeywordIcons(ArrayList<Keyword> keywords)
+	{
+		
+		hbox_keywords.getChildren().clear();
+		for (Keyword keyword : keywords)
+		{
+			// special case for the ward keyword
+			if (keyword == Keyword.WARD)
+				showWardBubble();
+			else if (keyword == Keyword.GUARD)
+				showGuardBorder();
+			else
+			{
+				IconUI keywordUI = new IconUI(keyword);
+				hbox_keywords.getChildren().add(keywordUI);
+			}
+		}
+
 	}
 
 	public void showGuardBorder()

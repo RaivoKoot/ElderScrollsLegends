@@ -1,34 +1,77 @@
 package model;
 
-public class HealthData{
-	
-	private int health = 30;
-	private int runesLeft = 5;
-	
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.scene.image.Image;
+
+public class HealthData implements Subject {
+
+	private final int STARTING_HEALTH = 30;
+	private final RunesLeft STARTING_RUNES = RunesLeft.FIVE;
+
+	private ArrayList<Observer> observers;
+	private int health;
+	private RunesLeft runesLeft;
+
+	public HealthData()
+	{
+		this.health = STARTING_HEALTH;
+		this.runesLeft = STARTING_RUNES;
+		observers = new ArrayList<Observer>();
+	}
+
 	public int getHealth()
 	{
 		return health;
 	}
+
 	public void setHealth(int health)
 	{
 		this.health = health;
+		updateRuneAmount();
+
+		notifyObservers();
 	}
-	
-	public void decreaseRunesLeft() {
-		this.runesLeft--;
-	}
-	public int getRunesLeft()
+
+	public Image getRuneImage()
 	{
-		return runesLeft;
+		return runesLeft.getFilledRunesImage();
 	}
-	public void setRunesLeft(int runesLeft)
+
+	private void updateRuneAmount()
 	{
-		this.runesLeft = runesLeft;
+		int newRuneAmount = health / 5;
+		if (newRuneAmount < runesLeft.getAmount())
+			runesLeft = RunesLeft.fromValue(newRuneAmount);
 	}
-	
-	public void updateRuneAmount() {
-		if((health / 5 -1) < runesLeft)
-			runesLeft--;
+
+	@Override
+	public void register(Observer observer)
+	{
+		if (!observers.contains(observer))
+			observers.add(observer);
+	}
+
+	@Override
+	public void unregister(Observer observer)
+	{
+		observers.remove(observer);
+	}
+
+	@Override
+	public void notifyObservers()
+	{
+		for (Observer observer : observers)
+		{
+			observer.update();
+		}
+	}
+
+	@Override
+	public Object getUpdate(Observer obj)
+	{
+		return this;
 	}
 
 }
