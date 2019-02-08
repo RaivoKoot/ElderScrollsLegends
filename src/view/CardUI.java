@@ -17,12 +17,16 @@ import model.Card;
 import model.CardAttribute;
 import model.CardTextures;
 import model.Keyword;
+import model.KeywordList;
+import model.MagickaData;
+import model.Observer;
+import model.Subject;
 
 /**
  * @author Raivo Koot
  *
  */
-public class CardUI extends AnchorPane {
+public class CardUI extends AnchorPane implements Observer {
 
 	private final double BIG_SCALE_SIZE = 1.25;
 	private final double SMALL_SCALE_SIZE = 0.8;
@@ -48,7 +52,7 @@ public class CardUI extends AnchorPane {
 	@FXML private Text text_damage;
 	@FXML private Text text_health;
 
-	private Card card;
+	private Subject subject;
 
 	/**
 	 * constructor that fills a new cardUI from a card object
@@ -57,7 +61,6 @@ public class CardUI extends AnchorPane {
 	 */
 	public CardUI(Card card)
 	{
-		this.card = card;
 
 		// load fxml file
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CardUI.fxml"));
@@ -68,15 +71,25 @@ public class CardUI extends AnchorPane {
 		try
 		{
 			fxmlLoader.load();
-
-			// assign correct texture colors
-			assignTextures();
-			updateKeywordIcons(card.getKeywords());
+			setSubject(card);
+			initializeUI(card);
 
 		} catch (IOException exception)
 		{
 			throw new RuntimeException(exception);
 		}
+	}
+
+	private void initializeUI(Card card)
+	{
+		update();
+
+		// one time settings
+		label_name.setText(card.getName());
+		label_description.setText(card.getDescription());
+		label_keywords.setText(card.getKeywords().toString());
+		toggleLegendaryBorder(card.isLegendary());
+		assignTextures(card);
 	}
 
 	public void makeSmaller()
@@ -115,15 +128,58 @@ public class CardUI extends AnchorPane {
 		hbox_keywords.setVisible(true);
 	}
 
+	private void updateKeywordIcons(KeywordList keywords)
+	{
+
+		hbox_keywords.getChildren().clear();
+
+		hbox_keywords.getChildren().addAll(keywords.getIconUIs());
+
+		toggleGuardBorder(keywords.hasGuard());
+		toggleWardBubble(keywords.hasWard());
+
+	}
+
+	@Override
+	public void update()
+	{
+		Card update = (Card) this.subject.getUpdate(this);
+
+		updateKeywordIcons(update.getKeywords());
+		text_damage.setText(String.valueOf(update.getPower()));
+		text_health.setText(String.valueOf(update.getHealth()));
+	}
+
+	@Override
+	public void setSubject(Subject sub)
+	{
+		this.subject = sub;
+		subject.register(this);
+	}
+
+	private void toggleGuardBorder(boolean guard)
+	{
+		imageView_guardborder.setVisible(guard);
+	}
+
+	private void toggleLegendaryBorder(boolean legendary)
+	{
+		imageView_legendaryborder.setVisible(legendary);
+	}
+
+	private void toggleWardBubble(boolean ward)
+	{
+		imageView_wardBubble.setVisible(ward);
+	}
+
 	/**
-	 * Sets the background imageViews of the cardUI to the correctly colored
-	 * textures
+	 * Sets the background of the cardUI to the correctly colored textures
 	 * 
 	 * @param card
 	 */
-	private void assignTextures()
+	private void assignTextures(Card card)
 	{
-		CardAttribute attribute = this.card.getAttribute();
+		CardAttribute attribute = card.getAttribute();
 		HashMap<CardTextures, Image> textures = attribute.getTextures();
 
 		Image background_texture = textures.get(CardTextures.TEXT_BACKGROUND);
@@ -133,46 +189,6 @@ public class CardUI extends AnchorPane {
 		imageView_descriptionBackground.setImage(background_texture);
 		imageView_attribute.setImage(icon_foto);
 		imageView_attributeSmall.setImage(icon_foto);
-	}
-	
-	private void updateKeywordIcons(ArrayList<Keyword> keywords)
-	{
-		
-		hbox_keywords.getChildren().clear();
-		for (Keyword keyword : keywords)
-		{
-			// special case for the ward keyword
-			if (keyword == Keyword.WARD)
-				showWardBubble();
-			else if (keyword == Keyword.GUARD)
-				showGuardBorder();
-			else
-			{
-				IconUI keywordUI = new IconUI(keyword);
-				hbox_keywords.getChildren().add(keywordUI);
-			}
-		}
-
-	}
-
-	public void showGuardBorder()
-	{
-		imageView_guardborder.setVisible(true);
-	}
-
-	public void showLegendaryBorder()
-	{
-		imageView_legendaryborder.setVisible(true);
-	}
-
-	public void showWardBubble()
-	{
-		imageView_wardBubble.setVisible(true);
-	}
-
-	public void hideWardBubble()
-	{
-		imageView_wardBubble.setVisible(true);
 	}
 
 }

@@ -1,8 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javafx.scene.image.Image;
 
 public class MagickaData implements Subject {
+	
+	public enum MagickaDataFields {CURRENT_MAGICKA, MAX_MAGICKA};
 
 	private final int STARTING_MAGICKA = 0;
 	private int currentMagicka;

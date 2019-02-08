@@ -19,28 +19,29 @@ public class Main extends Application {
 		{
 
 			// GameSessionMasterUI root = new GameSessionMasterUI();
-			/*
-			 * Card card = new Card();
-			 * 
-			 * card.setAttribute(CardAttribute.ENDURANCE); card.addKeyword(Keyword.DRAIN);
-			 * card.addKeyword(Keyword.GUARD); card.addKeyword(Keyword.BREAKTHROUGH);
-			 * card.addKeyword(Keyword.LETHAL); CardUI root = new CardUI(card);
-			 * //root.showDetailView(); root.showLegendaryBorder();
-			 */
+
+			Card card = new Card();
+
+			card.setAttribute(CardAttribute.ENDURANCE);
+			card.addKeyword(Keyword.DRAIN);
+			//card.addKeyword(Keyword.GUARD);
+			card.addKeyword(Keyword.BREAKTHROUGH);
+			card.addKeyword(Keyword.LETHAL);
+			CardUI root = new CardUI(card);
+			root.showDetailView();
 
 			/*
-			PlayerTowerUI root = new PlayerTowerUI();
-			HealthData health = new HealthData();
-			PlayerBaseData player = new PlayerBaseData();
-			root.assignUISources(health, player);
-			*/
-			
-			PlayerBaseData player = new PlayerBaseData();
-			MagickaData magicka = new MagickaData();
-			DeckList deck = new DeckList();
-			
-			PlayerDescriptionUI root = new PlayerDescriptionUI();
-			root.assignUISources(magicka, deck, player);
+			 * PlayerTowerUI root = new PlayerTowerUI(); HealthData health = new
+			 * HealthData(); PlayerBaseData player = new PlayerBaseData();
+			 * root.assignUISources(health, player);
+			 */
+			/*
+			 * PlayerBaseData player = new PlayerBaseData(); MagickaData magicka = new
+			 * MagickaData(); DeckList deck = new DeckList();
+			 * 
+			 * PlayerDescriptionUI root = new PlayerDescriptionUI();
+			 * root.assignUISources(magicka, deck, player);
+			 */
 
 			Scene scene = new Scene(root);
 			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -49,9 +50,6 @@ public class Main extends Application {
 			primaryStage.setMaximized(true);
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			
-			magicka.setMaxMagicka(5);
-			magicka.setCurrentMagicka(3);
 		} catch (Exception e)
 		{
 			e.printStackTrace();
