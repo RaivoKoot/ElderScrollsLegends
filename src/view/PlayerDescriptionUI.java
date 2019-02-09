@@ -7,13 +7,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import model.CardAttribute;
-import model.DeckList;
-import model.HealthData;
-import model.MagickaData;
 import model.Observer;
-import model.PlayerBaseData;
 import model.Subject;
+import model.card.CardAttribute;
+import model.player.DeckList;
+import model.player.HealthData;
+import model.player.MagickaData;
+import model.player.PlayerBaseData;
 
 public class PlayerDescriptionUI extends VBox implements Observer{
 	

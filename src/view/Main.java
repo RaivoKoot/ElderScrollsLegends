@@ -2,13 +2,16 @@ package view;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import model.Card;
-import model.CardAttribute;
-import model.DeckList;
-import model.HealthData;
-import model.Keyword;
-import model.MagickaData;
-import model.PlayerBaseData;
+import model.card.BattleCard;
+import model.card.Card;
+import model.card.CardAttribute;
+import model.card.CardRarity;
+import model.card.CardType;
+import model.card.Keyword;
+import model.player.DeckList;
+import model.player.HealthData;
+import model.player.MagickaData;
+import model.player.PlayerBaseData;
 import javafx.scene.Scene;
 
 public class Main extends Application {
@@ -20,15 +23,21 @@ public class Main extends Application {
 
 			// GameSessionMasterUI root = new GameSessionMasterUI();
 
-			Card card = new Card();
+			BattleCard card = new BattleCard();
+			card.setType(CardType.CREATURE);
+			card.setInitialPower(4);
+			card.setInitialHealth(6);
+			card.setName("Skidaddle");
+			card.setDescription("When another creature in this lane dies, draw a card.");
+			card.setMagicka_cost(5);
+			card.setRarity(CardRarity.EPIC);
 
 			card.setAttribute(CardAttribute.ENDURANCE);
-			card.addKeyword(Keyword.DRAIN);
-			//card.addKeyword(Keyword.GUARD);
-			card.addKeyword(Keyword.BREAKTHROUGH);
-			card.addKeyword(Keyword.LETHAL);
+			// card.addKeyword(Keyword.DRAIN);
+			// card.addKeyword(Keyword.GUARD);
+			// card.addKeyword(Keyword.BREAKTHROUGH);
+			// card.addKeyword(Keyword.LETHAL);
 			CardUI root = new CardUI(card);
-			root.showDetailView();
 
 			/*
 			 * PlayerTowerUI root = new PlayerTowerUI(); HealthData health = new

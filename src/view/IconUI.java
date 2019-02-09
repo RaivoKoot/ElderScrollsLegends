@@ -6,9 +6,9 @@ import java.util.HashMap;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import model.CardAttribute;
-import model.CardTextures;
 import model.GivesTextures;
+import model.card.CardAttribute;
+import model.card.CardTextures;
 
 public class IconUI extends ImageView{
 	

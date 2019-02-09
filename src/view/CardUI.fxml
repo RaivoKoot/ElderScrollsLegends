@@ -23,7 +23,7 @@
          <children>
             <ImageView fx:id="imageView_guardborder" fitHeight="180.0" fitWidth="128.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../../../../Desktop/resources/final_resources/guard_border.png" />
+                  <Image url="@../resources/card/border_guard.png" />
                </image>
                <effect>
                   <DropShadow height="3.0" radius="1.0" width="3.0" />
@@ -117,7 +117,7 @@
             </StackPane>
             <ImageView fx:id="imageView_legendaryborder" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" visible="false">
                <image>
-                  <Image url="@../../../../../Desktop/resources/final_resources/border_legendary.png" />
+                  <Image url="@../resources/card/border_legendary.png" />
                </image>
                <StackPane.margin>
                   <Insets top="-2.0" />
@@ -128,30 +128,27 @@
             </ImageView>
          </children>
       </StackPane>
-      <StackPane layoutY="91.0" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="81.0">
+      <StackPane fx:id="pane_power" layoutY="91.0" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="60.0">
          <children>
-            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/resources/final_resources/damage.png" />
+                  <Image url="@../resources/card/icon_attack.png" />
                </image>
             </ImageView>
             <Text fx:id="text_damage" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
-               <font>
-                  <Font size="13.0" />
-               </font>
                <StackPane.margin>
-                  <Insets right="1.0" top="1.0" />
+                  <Insets right="2.0" top="1.0" />
                </StackPane.margin></Text>
          </children>
          <effect>
             <DropShadow />
          </effect>
       </StackPane>
-      <StackPane layoutY="91.0" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+      <StackPane fx:id="pane_health" layoutY="91.0" visible="false" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="70.0">
          <children>
-            <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/resources/final_resources/armor.png" />
+                  <Image url="@../resources/card/icon_defense.png" />
                </image>
             </ImageView>
             <Text fx:id="text_health" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
@@ -183,7 +180,7 @@
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/card/magicka_crystal.png" />
+                              <Image url="@../resources/card/icon_magicka.png" />
                            </image>
                         </ImageView>
                         <Text fx:id="text_magicka" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER">
@@ -252,6 +249,11 @@
          </effect>
          <image>
             <Image url="@../resources/card/ward_bubble.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imageView_rarity" fitHeight="10.0" fitWidth="15.0" pickOnBounds="true" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="57.0">
+         <image>
+            <Image url="@../resources/card/rarity_icon_common.png" />
          </image>
       </ImageView>
    </children>

@@ -7,12 +7,12 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import model.DeckList;
-import model.HealthData;
-import model.MagickaData;
 import model.Observer;
-import model.PlayerBaseData;
 import model.Subject;
+import model.player.DeckList;
+import model.player.HealthData;
+import model.player.MagickaData;
+import model.player.PlayerBaseData;
 
 public class PlayerTowerUI extends StackPane implements Observer {
 	@FXML private ImageView imageView_runes;

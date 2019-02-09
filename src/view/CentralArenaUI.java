@@ -8,11 +8,11 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
-import model.Card;
-import model.CardAttribute;
-import model.DeckList;
-import model.MagickaData;
-import model.PlayerBaseData;
+import model.card.Card;
+import model.card.CardAttribute;
+import model.player.DeckList;
+import model.player.MagickaData;
+import model.player.PlayerBaseData;
 
 public class CentralArenaUI extends BorderPane {
 
@@ -72,7 +72,7 @@ public class CentralArenaUI extends BorderPane {
 	private void populateDescriptionUI(PlayerDescriptionUI descriptionUI, MagickaData magicka, DeckList deck,
 			PlayerBaseData player)
 	{
-		descriptionUI.fillUI(magicka, deck, player);
+		descriptionUI.assignUISources(magicka, deck, player);
 	}
 
 	public void fillHandTest()
@@ -101,11 +101,11 @@ public class CentralArenaUI extends BorderPane {
 		cardUI_5.showDetailView();
 		cardUI_4.showDetailView();
 
-		cardUI_3.showWardBubble();
+		//cardUI_3.showWardBubble();
 
-		cardUI_2.showLegendaryBorder();
-		cardUI_5.showLegendaryBorder();
-		cardUI_4.showGuardBorder();
+		//cardUI_2.showLegendaryBorder();
+		//cardUI_5.showLegendaryBorder();
+		//cardUI_4.showGuardBorder();
 		// cardUI_6.showDetailView();
 
 		handUI.addCard(cardUI_6);
