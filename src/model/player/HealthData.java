@@ -12,9 +12,10 @@ public class HealthData implements Subject {
 	private final int STARTING_HEALTH = 30;
 	private final RunesLeft STARTING_RUNES = RunesLeft.FIVE;
 
-	private ArrayList<Observer> observers;
 	private int health;
 	private RunesLeft runesLeft;
+	
+	private ArrayList<Observer> observers;
 
 	public HealthData()
 	{

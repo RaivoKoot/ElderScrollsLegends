@@ -9,9 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import model.Observer;
 import model.Subject;
-import model.player.DeckList;
 import model.player.HealthData;
-import model.player.MagickaData;
 import model.player.PlayerBaseData;
 
 public class PlayerTowerUI extends StackPane implements Observer {

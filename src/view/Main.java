@@ -8,7 +8,7 @@ import model.card.CardAttribute;
 import model.card.CardRarity;
 import model.card.CardType;
 import model.card.Keyword;
-import model.player.DeckList;
+import model.cardlists.DeckList;
 import model.player.HealthData;
 import model.player.MagickaData;
 import model.player.PlayerBaseData;
@@ -55,8 +55,8 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
-			primaryStage.setFullScreen(true);
-			primaryStage.setMaximized(true);
+			//primaryStage.setFullScreen(true);
+			//primaryStage.setMaximized(true);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e)

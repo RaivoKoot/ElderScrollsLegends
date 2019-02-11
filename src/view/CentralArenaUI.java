@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import model.card.Card;
 import model.card.CardAttribute;
-import model.player.DeckList;
+import model.cardlists.DeckList;
 import model.player.MagickaData;
 import model.player.PlayerBaseData;
 

@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import model.Observer;
 import model.Subject;
 import model.card.CardAttribute;
-import model.player.DeckList;
+import model.cardlists.DeckList;
 import model.player.HealthData;
 import model.player.MagickaData;
 import model.player.PlayerBaseData;
