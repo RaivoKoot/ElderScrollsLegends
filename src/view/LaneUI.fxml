@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+
+
+<fx:root fx:id="hbox_fieldLane" alignment="CENTER" maxHeight="190.0" maxWidth="615.0" prefHeight="190.0" prefWidth="615.0" spacing="10.0" type="HBox" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" />

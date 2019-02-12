@@ -3,4 +3,4 @@
 <?import javafx.scene.layout.HBox?>
 
 
-<fx:root id="root" fx:id="hbox_cards" minHeight="200.0" minWidth="1700.0" spacing="50.0" stylesheets="@HandUI.css" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<fx:root id="root" alignment="TOP_CENTER" maxHeight="120.0" minHeight="120.0" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" />

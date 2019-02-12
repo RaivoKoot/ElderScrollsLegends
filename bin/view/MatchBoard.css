@@ -1,0 +1,11 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#narrowscreen {
+	-fx-background-image:url('/resources/gameboard/background_narrow.jpg');
+    -fx-background-size: stretch;
+}
+
+#widescreen {
+    -fx-background-image:url('/resources/gameboard/background_wide.jpg');
+    -fx-background-size: stretch;
+}

@@ -128,7 +128,7 @@
             </ImageView>
          </children>
       </StackPane>
-      <StackPane fx:id="pane_power" layoutY="91.0" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="60.0">
+      <StackPane fx:id="pane_power" layoutY="91.0" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="60.0">
          <children>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -160,6 +160,11 @@
             <DropShadow />
          </effect>
       </StackPane>
+      <ImageView fx:id="imageView_rarity" fitHeight="10.0" fitWidth="15.0" pickOnBounds="true" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="57.0">
+         <image>
+            <Image url="@../resources/card/rarity_icon_common.png" />
+         </image>
+      </ImageView>
       <HBox fx:id="hbox_keywords" alignment="CENTER" prefWidth="70.0" spacing="1.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
          <effect>
             <DropShadow />
@@ -249,11 +254,6 @@
          </effect>
          <image>
             <Image url="@../resources/card/ward_bubble.gif" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imageView_rarity" fitHeight="10.0" fitWidth="15.0" pickOnBounds="true" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="57.0">
-         <image>
-            <Image url="@../resources/card/rarity_icon_common.png" />
          </image>
       </ImageView>
    </children>

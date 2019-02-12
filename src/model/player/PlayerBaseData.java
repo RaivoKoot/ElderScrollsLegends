@@ -8,7 +8,7 @@ public class PlayerBaseData {
 	private Image foto;
 	
 	public PlayerBaseData() {
-		this.name = "Default Bitch";
+		this.name = "Default Name";
 		this.foto = new Image("/resources/playertower/profile_foto_default.png");
 	}
 

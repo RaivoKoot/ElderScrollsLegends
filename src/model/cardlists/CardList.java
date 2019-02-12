@@ -14,6 +14,7 @@ public class CardList extends ArrayList<Card> implements Subject {
 	public CardList(MaximumSize MAX_SIZE)
 	{
 		setMaxSize(MAX_SIZE);
+		observers = new ArrayList<Observer>();
 	}
 
 	/**
@@ -45,6 +46,32 @@ public class CardList extends ArrayList<Card> implements Subject {
 			this.maximumSize = 100;
 			break;
 		}
+	}
+
+	@Override
+	public boolean add(Card card)
+	{
+
+		if (super.add(card))
+		{
+			notifyObservers();
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
+	public boolean remove(Object card)
+	{
+
+		if (super.remove(card))
+		{
+			notifyObservers();
+			return true;
+		}
+
+		return false;
 	}
 
 	@Override

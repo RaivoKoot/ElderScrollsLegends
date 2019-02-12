@@ -32,7 +32,7 @@ import model.player.MagickaData;
  */
 public class CardUI extends AnchorPane implements Observer {
 
-	private final double BIG_SCALE_SIZE = 1.25;
+	private final double BIG_SCALE_SIZE = 1.40;
 	private final double SMALL_SCALE_SIZE = 0.8;
 
 	/* Description ui container */
@@ -270,6 +270,11 @@ public class CardUI extends AnchorPane implements Observer {
 	private void setRarityIcon(Card card)
 	{
 		imageView_rarity.setImage(card.getRarity().getIcon());
+	}
+
+	public Card getCard()
+	{
+		return (Card) subject;
 	}
 
 }
