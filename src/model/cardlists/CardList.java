@@ -2,11 +2,13 @@ package model.cardlists;
 
 import java.util.ArrayList;
 
+import controller.actions.IAction;
+import model.IState;
 import model.Observer;
 import model.Subject;
 import model.card.Card;
 
-public class CardList extends ArrayList<Card> implements Subject {
+public class CardList extends ArrayList<Card> implements Subject, IState{
 
 	private int maximumSize;
 	private ArrayList<Observer> observers;
@@ -100,5 +102,12 @@ public class CardList extends ArrayList<Card> implements Subject {
 	public Object getUpdate(Observer obj)
 	{
 		return this;
+	}
+
+	@Override
+	public void apply(IAction action)
+	{
+		action.execute(this);
+		
 	}
 }

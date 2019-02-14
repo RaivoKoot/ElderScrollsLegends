@@ -1,40 +1,50 @@
 package model.card;
 
-public class BattleCard extends Card {
+import model.Observer;
+import model.Subject;
 
-	private int power;
-	private int health;
+public class BattleCard extends Card implements Observer{
+
 	private KeywordList keywords;
 
 	private int initialPower;
 	private int initialHealth;
+	private StatAlterationList statAlterations;
+	
+	/**
+	 * observes its own StatAlterationList to notify CardUI of change
+	 */
+	private Subject subject;
 
 	public BattleCard()
 	{
 		super();
 		keywords = new KeywordList();
+		statAlterations = new StatAlterationList();
+		setSubject(statAlterations);
+	}
+	
+	@Override
+	public void update()
+	{
+		notifyObservers();
+	}
+
+	@Override
+	public void setSubject(Subject sub)
+	{
+		this.subject = sub;
+		subject.register(this);
 	}
 
 	public int getPower()
 	{
-		return power;
-	}
-
-	public void setPower(int power)
-	{
-		this.power = power;
-		notifyObservers();
+		return initialPower + statAlterations.sumPower();
 	}
 
 	public int getHealth()
 	{
-		return health;
-	}
-
-	public void setHealth(int health)
-	{
-		this.health = health;
-		notifyObservers();
+		return initialHealth + statAlterations.sumHealth();
 	}
 
 	public KeywordList getKeywords()
@@ -56,7 +66,6 @@ public class BattleCard extends Card {
 	public void setInitialPower(int initialPower)
 	{
 		this.initialPower = initialPower;
-		this.power = initialPower;
 	}
 
 	public int getInitialHealth()
@@ -67,6 +76,15 @@ public class BattleCard extends Card {
 	public void setInitialHealth(int initialHealth)
 	{
 		this.initialHealth = initialHealth;
-		this.health = initialHealth;
+	}
+
+	public StatAlterationList getStatAlterations()
+	{
+		return statAlterations;
+	}
+
+	public void setStatAlterations(StatAlterationList statAlterations)
+	{
+		this.statAlterations = statAlterations;
 	}
 }

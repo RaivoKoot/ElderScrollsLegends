@@ -3,11 +3,13 @@ package model.player;
 import java.util.ArrayList;
 import java.util.List;
 
+import controller.actions.IAction;
 import javafx.scene.image.Image;
+import model.IState;
 import model.Observer;
 import model.Subject;
 
-public class HealthData implements Subject {
+public class HealthData implements Subject, IState {
 
 	private final int STARTING_HEALTH = 30;
 	private final RunesLeft STARTING_RUNES = RunesLeft.FIVE;
@@ -75,6 +77,13 @@ public class HealthData implements Subject {
 	public Object getUpdate(Observer obj)
 	{
 		return this;
+	}
+
+	@Override
+	public void apply(IAction action)
+	{
+		action.execute(this);
+		
 	}
 
 }

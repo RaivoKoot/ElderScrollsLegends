@@ -1,10 +1,14 @@
 package model.player;
 
+import controller.actions.IAction;
+import model.IState;
 import model.cardlists.CardList;
 import model.cardlists.DeckList;
 import model.cardlists.MaximumSize;
 
-public class Player {
+public class Player implements IState{
+	
+	private Player opponent;
 
 	private HealthData health;
 	private MagickaData magicka;
@@ -109,6 +113,23 @@ public class Player {
 	public void setShadowLane(CardList shadowLane)
 	{
 		this.shadowLane = shadowLane;
+	}
+
+	@Override
+	public void apply(IAction action)
+	{
+		action.execute(this);
+		
+	}
+
+	public Player getOpponent()
+	{
+		return opponent;
+	}
+
+	public void setOpponent(Player opponent)
+	{
+		this.opponent = opponent;
 	}
 	
 	

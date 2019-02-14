@@ -2,11 +2,13 @@ package model.card;
 
 import java.util.ArrayList;
 
+import controller.actions.IAction;
 import javafx.scene.image.Image;
+import model.IState;
 import model.Observer;
 import model.Subject;
 
-public class Card implements Subject {
+public class Card implements Subject, IState {
 
 	private String name;
 	private String description;
@@ -131,6 +133,13 @@ public class Card implements Subject {
 	public void setRarity(CardRarity rarity)
 	{
 		this.rarity = rarity;
+	}
+
+	@Override
+	public void apply(IAction action)
+	{
+		action.execute(this);
+		
 	}
 
 }

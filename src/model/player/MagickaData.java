@@ -3,11 +3,13 @@ package model.player;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import controller.actions.IAction;
 import javafx.scene.image.Image;
+import model.IState;
 import model.Observer;
 import model.Subject;
 
-public class MagickaData implements Subject {
+public class MagickaData implements Subject, IState {
 	
 	public enum MagickaDataFields {CURRENT_MAGICKA, MAX_MAGICKA};
 
@@ -72,6 +74,13 @@ public class MagickaData implements Subject {
 	public Object getUpdate(Observer obj)
 	{
 		return this;
+	}
+
+	@Override
+	public void apply(IAction action)
+	{
+		action.execute(this);
+		
 	}
 
 }

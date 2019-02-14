@@ -2,12 +2,15 @@ package view;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import model.IState;
 import model.card.BattleCard;
 import model.card.Card;
 import model.card.CardAttribute;
 import model.card.CardRarity;
 import model.card.CardType;
 import model.card.Keyword;
+import model.card.StatAlteration;
+import model.card.StatAlterationType;
 import model.cardlists.DeckList;
 import model.player.HealthData;
 import model.player.MagickaData;
@@ -32,7 +35,7 @@ public class Main extends Application {
 		card.setAttribute(CardAttribute.ENDURANCE);
 		card.getKeywords().add(Keyword.DRAIN);
 		card.getKeywords().add(Keyword.LETHAL);
-		
+
 		return card;
 	}
 
@@ -51,12 +54,12 @@ public class Main extends Application {
 			Card c2 = generateCard();
 			Card c3 = generateCard();
 			Card c4 = generateCard();
-			
+
 			Card c5 = generateCard();
 			Card c6 = generateCard();
 			Card c7 = generateCard();
 			Card c8 = generateCard();
-			
+
 			Card c9 = generateCard();
 			Card c10 = generateCard();
 			Card c11 = generateCard();
@@ -66,21 +69,21 @@ public class Main extends Application {
 			p1.getFieldLane().add(c2);
 			p1.getShadowLane().add(c3);
 			p2.getFieldLane().add(c4);
-			
+
 			p1.getHand().add(c5);
 			p1.getFieldLane().add(c6);
 			p1.getShadowLane().add(c7);
 			p2.getFieldLane().add(c8);
-			
+
 			p1.getHand().add(c9);
 			p1.getHand().add(c10);
 			p1.getHand().add(c11);
 			p1.getFieldLane().add(c12);
-			
+
 			Card c13 = generateCard();
-			
+
 			p2.getShadowLane().add(c13);
-			((BattleCard)c13).setHealth(20);
+			((BattleCard) c13).getStatAlterations().addAlteration(new StatAlteration(10, 10, c13, StatAlterationType.ITEM));
 
 			/*
 			 * PlayerTowerUI root = new PlayerTowerUI(); HealthData health = new
