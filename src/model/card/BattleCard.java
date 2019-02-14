@@ -23,6 +23,7 @@ public class BattleCard extends Card {
 	public void setPower(int power)
 	{
 		this.power = power;
+		notifyObservers();
 	}
 
 	public int getHealth()
@@ -33,6 +34,7 @@ public class BattleCard extends Card {
 	public void setHealth(int health)
 	{
 		this.health = health;
+		notifyObservers();
 	}
 
 	public KeywordList getKeywords()
@@ -43,6 +45,7 @@ public class BattleCard extends Card {
 	public void setKeywords(KeywordList keywords)
 	{
 		this.keywords = keywords;
+		notifyObservers();
 	}
 
 	public int getInitialPower()

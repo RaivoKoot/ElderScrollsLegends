@@ -60,6 +60,7 @@ public class Card implements Subject {
 	public void setMagicka_cost(int magicka_cost)
 	{
 		this.magicka_cost = magicka_cost;
+		notifyObservers();
 	}
 
 	public Image getPicture()

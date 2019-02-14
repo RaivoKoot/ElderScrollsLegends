@@ -76,6 +76,11 @@ public class Main extends Application {
 			p1.getHand().add(c10);
 			p1.getHand().add(c11);
 			p1.getFieldLane().add(c12);
+			
+			Card c13 = generateCard();
+			
+			p2.getShadowLane().add(c13);
+			((BattleCard)c13).setHealth(20);
 
 			/*
 			 * PlayerTowerUI root = new PlayerTowerUI(); HealthData health = new
