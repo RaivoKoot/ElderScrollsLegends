@@ -2,11 +2,12 @@ package model.card;
 
 import java.util.ArrayList;
 
-import controller.actions.IAction;
+import controller.action_framework.IAction;
 import javafx.scene.image.Image;
 import model.IState;
 import model.Observer;
 import model.Subject;
+import model.player.Player;
 
 public class Card implements Subject, IState {
 
@@ -18,6 +19,8 @@ public class Card implements Subject, IState {
 	private CardRarity rarity;
 	private int magicka_cost;
 	private Image picture;
+	
+	private Player owner;
 
 	private ArrayList<Observer> observers;
 
@@ -138,8 +141,25 @@ public class Card implements Subject, IState {
 	@Override
 	public void apply(IAction action)
 	{
-		action.execute(this);
+		try
+		{
+			action.execute(this);
+		} catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+	}
+
+	public Player getOwner()
+	{
+		return owner;
+	}
+
+	public void setOwner(Player owner)
+	{
+		this.owner = owner;
 	}
 
 }

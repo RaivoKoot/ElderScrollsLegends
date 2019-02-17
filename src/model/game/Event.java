@@ -1,9 +1,9 @@
 package model.game;
 
-import controller.actions.IAction;
+import controller.action_framework.IAction;
 import model.IState;
 
-public class Event implements IState{
+public class Event implements IState {
 
 	private EventType type;
 	private IState source;
@@ -49,8 +49,21 @@ public class Event implements IState{
 	@Override
 	public void apply(IAction action)
 	{
-		action.execute(this);
-		
+		try
+		{
+			action.execute(this);
+		} catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public String toString()
+	{
+		return type.toString();
 	}
 
 }

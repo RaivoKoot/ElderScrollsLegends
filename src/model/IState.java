@@ -1,6 +1,6 @@
 package model;
 
-import controller.actions.IAction;
+import controller.action_framework.IAction;
 
 public interface IState {
 

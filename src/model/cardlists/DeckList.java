@@ -6,22 +6,30 @@ import model.Observer;
 import model.Subject;
 import model.card.Card;
 import model.card.CardAttribute;
+import model.player.Player;
+import view.Main;
 
 public class DeckList extends CardList {
 
 	private ArrayList<CardAttribute> attributes;
 	private final int MINIMUM_SIZE = 50;
+	private Player owner;
 
 	private ArrayList<Observer> observers;
 
-	public DeckList()
+	public DeckList(Player owner)
 	{
 		super(MaximumSize.HUNDRED);
+		this.owner = owner;
 		attributes = new ArrayList<CardAttribute>();
 
 		// testing
 		addAttribute(CardAttribute.ENDURANCE);
 		addAttribute(CardAttribute.INTELLIGENCE);
+
+		// testing
+		for (int i = 0; i < 10; i++)
+			this.add(Main.generateCard(owner));
 	}
 
 	/**
@@ -50,32 +58,14 @@ public class DeckList extends CardList {
 		this.attributes.remove(attribute);
 	}
 
-	@Override
-	public void register(Observer observer)
+	public Player getOwner()
 	{
-		if (!observers.contains(observer))
-			observers.add(observer);
+		return owner;
 	}
 
-	@Override
-	public void unregister(Observer observer)
+	public void setOwner(Player owner)
 	{
-		observers.remove(observer);
-	}
-
-	@Override
-	public void notifyObservers()
-	{
-		for (Observer observer : observers)
-		{
-			observer.update();
-		}
-	}
-
-	@Override
-	public Object getUpdate(Observer obj)
-	{
-		return this;
+		this.owner = owner;
 	}
 
 }

@@ -3,7 +3,7 @@ package model.player;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import controller.actions.IAction;
+import controller.action_framework.IAction;
 import javafx.scene.image.Image;
 import model.IState;
 import model.Observer;
@@ -79,7 +79,14 @@ public class MagickaData implements Subject, IState {
 	@Override
 	public void apply(IAction action)
 	{
-		action.execute(this);
+		try
+		{
+			action.execute(this);
+		} catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

@@ -153,8 +153,8 @@ public class MatchboardUI extends BorderPane {
 		MagickaData magicka1 = new MagickaData();
 		MagickaData magicka2 = new MagickaData();
 
-		DeckList deck1 = new DeckList();
-		DeckList deck2 = new DeckList();
+		DeckList deck1 = new DeckList(null);
+		DeckList deck2 = new DeckList(null);
 
 		PlayerBaseData playerData = new PlayerBaseData();
 

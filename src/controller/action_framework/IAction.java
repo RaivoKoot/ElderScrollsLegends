@@ -1,4 +1,4 @@
-package controller.actions;
+package controller.action_framework;
 
 import model.IState;
 import model.game.Event;
@@ -9,13 +9,13 @@ public abstract class IAction {
 	private IState source;
 	private EventType trigger;
 
-	public IAction(IState source, boolean repetitive, EventType trigger)
+	public IAction(Event source, boolean repetitive, EventType trigger)
 	{
 		this.source = source;
 		this.repetitive = repetitive;
 	}
-	
-	public abstract void execute(IState state);
+
+	public abstract void execute(IState state) throws Exception;
 
 	public boolean isRepetetive()
 	{
@@ -27,8 +27,18 @@ public abstract class IAction {
 		return source == this.source;
 	}
 
-	public boolean isValid(Event currentEvent)
+	public boolean isValid(IState currentEvent)
 	{
-		return currentEvent.getType() == trigger;
+		return ((Event) currentEvent).getType() == trigger;
+	}
+
+	public IState getSource()
+	{
+		return source;
+	}
+
+	public void setSource(IState source)
+	{
+		this.source = source;
 	}
 }

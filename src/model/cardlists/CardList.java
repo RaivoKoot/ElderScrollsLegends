@@ -2,16 +2,20 @@ package model.cardlists;
 
 import java.util.ArrayList;
 
-import controller.actions.IAction;
+import controller.action_framework.IAction;
 import model.IState;
 import model.Observer;
 import model.Subject;
 import model.card.Card;
 
-public class CardList extends ArrayList<Card> implements Subject, IState{
+public class CardList extends ArrayList<Card> implements Subject, IState {
 
 	private int maximumSize;
+
+	// Subject fields
 	private ArrayList<Observer> observers;
+	private Card lastChangedCard;
+	private CardListChange lastChange;
 
 	public CardList(MaximumSize MAX_SIZE)
 	{
@@ -56,6 +60,9 @@ public class CardList extends ArrayList<Card> implements Subject, IState{
 
 		if (super.add(card))
 		{
+			lastChangedCard = card;
+			lastChange = CardListChange.CARD_ADDED;
+
 			notifyObservers();
 			return true;
 		}
@@ -69,6 +76,9 @@ public class CardList extends ArrayList<Card> implements Subject, IState{
 
 		if (super.remove(card))
 		{
+			lastChangedCard = (Card) card;
+			lastChange = CardListChange.CARD_REMOVED;
+
 			notifyObservers();
 			return true;
 		}
@@ -101,13 +111,22 @@ public class CardList extends ArrayList<Card> implements Subject, IState{
 	@Override
 	public Object getUpdate(Observer obj)
 	{
-		return this;
+		Object[] update = { lastChangedCard, lastChange };
+
+		return update;
 	}
 
 	@Override
 	public void apply(IAction action)
 	{
-		action.execute(this);
-		
+		try
+		{
+			action.execute(this);
+		} catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

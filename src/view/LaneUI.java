@@ -2,6 +2,7 @@ package view;
 
 import java.io.IOException;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
@@ -9,6 +10,7 @@ import model.Observer;
 import model.Subject;
 import model.card.Card;
 import model.cardlists.CardList;
+import model.cardlists.CardListChange;
 
 public class LaneUI extends HBox implements Observer {
 
@@ -57,46 +59,57 @@ public class LaneUI extends HBox implements Observer {
 		this.getChildren().remove(card);
 	}
 
+	/**
+	 * gets the updated card from the subject cardList. The card was either added or
+	 * removed from the cardlist. This method checks if it was removed and if so
+	 * removes the corresponding UI
+	 */
 	@Override
 	public void update()
 	{
-		CardList update = (CardList) this.subject.getUpdate(this);
+		System.out.println("Update of a lane UI");
+		Object[] update = (Object[]) this.subject.getUpdate(this);
+		Card changedCard = (Card) update[0];
+		CardListChange changeType = (CardListChange) update[1];
 
-		/*
-		 * checks if the cards that are in the ui lane are still in the cardlist. Remove
-		 * the card from the ui if it isnt in the cardlist anymore.
-		 */
-		for (Node cardUI : this.getChildren())
-		{
+		switch (changeType) {
+		case CARD_REMOVED:
 
-			if (!update.contains(((CardUI) cardUI).getCard()))
+			CardUI toBeRemoved = null;
+			/*
+			 * iterates over cardUI list and checks if each ui's corresponding card object
+			 * is the updated one. removes the ui if so
+			 */
+			ObservableList<Node> children = this.getChildren();
+			for (Node cardUI : children)
 			{
-				this.getChildren().remove(cardUI);
-			}
-		}
 
-		for (Card card : update)
-		{
-			boolean alreadyOnHand = false;
-			for (Node cardUI : this.getChildren())
-			{
-				Card nodesCard = ((CardUI) cardUI).getCard();
-				if (nodesCard == card)
-					alreadyOnHand = true;
-			}
-
-			if (!alreadyOnHand)
-			{
-				CardUI addedCard = new CardUI(card);
-				this.getChildren().add(addedCard);
-
-				if (this.type == LaneType.HAND)
+				if (((CardUI) cardUI).getCard() == changedCard)
 				{
-					addedCard.makeBigger();
-					addedCard.toggleMinimalisticView(false);
+
+					toBeRemoved = (CardUI) cardUI;
+					break;
 				}
 
 			}
+			
+			children.remove(toBeRemoved);
+
+			break;
+
+		case CARD_ADDED:
+
+			CardUI addedCard = new CardUI(changedCard);
+			this.getChildren().add(addedCard);
+
+			if (this.type == LaneType.HAND)
+			{
+				addedCard.makeBigger();
+				addedCard.toggleMinimalisticView(false);
+			}
+
+			break;
+
 		}
 
 	}

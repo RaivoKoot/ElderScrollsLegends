@@ -1,22 +1,25 @@
-package controller.actions;
+package controller.actions.core;
 
 import java.util.ArrayList;
 
+import controller.action_framework.ActiveActions;
+import controller.action_framework.IAction;
+import controller.actions.LastGasp;
 import model.IState;
 import model.game.Event;
 import model.game.EventType;
 
 /**
  * @author Raivo Koot triggers when a card gets destroyed and removes any active
- *         effects of that card from the active action list
+ *         effects of that card from the active action list apart from last gasp
+ *         actions
  */
-public class RemoveActionsOfCard extends IAction{
+public class RemoveActionsOfDeadCard extends IAction {
 
 	private static final EventType TRIGGER = EventType.CARD_DESTRUCTION;
 	private static final boolean REPETITIVE = true;
-	private ActiveActions source;
 
-	public RemoveActionsOfCard(IState source)
+	public RemoveActionsOfDeadCard(Event source)
 	{
 		super(source, REPETITIVE, TRIGGER);
 	}
@@ -25,11 +28,11 @@ public class RemoveActionsOfCard extends IAction{
 	public void execute(IState state)
 	{
 		IState diedCard = ((Event) state).getTarget();
-		ArrayList<IAction> activeActions = source.getActions();
+		ArrayList<IAction> activeActions = ActiveActions.actions;
 
 		for (IAction action : activeActions)
 		{
-			if (action.isChildOf(diedCard))
+			if (action.isChildOf(diedCard) && action.getClass() != LastGasp.class)
 				activeActions.remove(action);
 		}
 

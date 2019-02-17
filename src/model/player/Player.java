@@ -1,6 +1,6 @@
 package model.player;
 
-import controller.actions.IAction;
+import controller.action_framework.IAction;
 import model.IState;
 import model.cardlists.CardList;
 import model.cardlists.DeckList;
@@ -26,7 +26,7 @@ public class Player implements IState{
 		magicka = new MagickaData();
 		baseInfo = new PlayerBaseData();
 		
-		deck = new DeckList();
+		deck = new DeckList(this);
 		hand = new CardList(MaximumSize.TEN);
 		discardPile = new CardList(MaximumSize.HUNDRED);
 		
@@ -118,7 +118,14 @@ public class Player implements IState{
 	@Override
 	public void apply(IAction action)
 	{
-		action.execute(this);
+		try
+		{
+			action.execute(this);
+		} catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
