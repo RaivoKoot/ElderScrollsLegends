@@ -63,9 +63,11 @@ public class MatchboardUI extends BorderPane {
 	{
 		addHandUI(player_1.getHand());
 		addLaneUIs(player_1, player_2);
+		
+		vbox_playerDescription.assignUISources(player_1.getMagicka(), player_1.getDeck(), player_1.getBaseInfo());
+		vbox_opponentPlayerDescription.assignUISources(player_2.getMagicka(), player_2.getDeck(), player_2.getBaseInfo());
 
 		setBackground();
-		testDescriptionUI(); // fill out description uis
 		vbox_opponentPlayerDescription.reversePaneOrder();
 	}
 
@@ -105,61 +107,6 @@ public class MatchboardUI extends BorderPane {
 
 		if (width / height > 1.6)
 			this.setId("widescreen");
-	}
-
-	private void populateDescriptionUI(PlayerDescriptionUI descriptionUI, MagickaData magicka, DeckList deck,
-			PlayerBaseData player)
-	{
-		descriptionUI.assignUISources(magicka, deck, player);
-	}
-
-	/*
-	 * public void fillHandTest() {
-	 * 
-	 * Card card_1 = new Card(); Card card_2 = new Card(); Card card_3 = new Card();
-	 * Card card_4 = new Card(); Card card_5 = new Card(); Card card_6 = new Card();
-	 * 
-	 * card_1.setAttribute(CardAttribute.STRENGTH);
-	 * card_2.setAttribute(CardAttribute.INTELLIGENCE);
-	 * card_3.setAttribute(CardAttribute.WILLPOWER);
-	 * card_4.setAttribute(CardAttribute.AGILITY);
-	 * card_5.setAttribute(CardAttribute.ENDURANCE);
-	 * card_6.setAttribute(CardAttribute.NEUTRAL);
-	 * 
-	 * CardUI cardUI_1 = new CardUI(card_1); CardUI cardUI_2 = new CardUI(card_2);
-	 * CardUI cardUI_3 = new CardUI(card_3); CardUI cardUI_4 = new CardUI(card_4);
-	 * CardUI cardUI_5 = new CardUI(card_5); CardUI cardUI_6 = new CardUI(card_6);
-	 * //cardUI_5.showDetailView(); //cardUI_4.showDetailView();
-	 * 
-	 * //cardUI_3.showWardBubble();
-	 * 
-	 * //cardUI_2.showLegendaryBorder(); //cardUI_5.showLegendaryBorder();
-	 * //cardUI_4.showGuardBorder(); // cardUI_6.showDetailView();
-	 * 
-	 * handUI.addCard(cardUI_6); handUI.addCard(cardUI_5);
-	 * 
-	 * battleLanesUI_opponent.addCardFieldLane(cardUI_3);
-	 * battleLanesUI_opponent.addCardFieldLane(cardUI_2);
-	 * battleLanesUI_friendlyPlayer.addCardFieldLane(cardUI_1);
-	 * battleLanesUI_friendlyPlayer.addCardFieldLane(cardUI_4);
-	 * 
-	 * //
-	 * hbox_handcardsHolder.getChildren().addAll(cardUI_1,cardUI_2,cardUI_3,cardUI_4
-	 * ,cardUI_5,cardUI_6); }
-	 */
-
-	private void testDescriptionUI()
-	{
-		MagickaData magicka1 = new MagickaData();
-		MagickaData magicka2 = new MagickaData();
-
-		DeckList deck1 = new DeckList(null);
-		DeckList deck2 = new DeckList(null);
-
-		PlayerBaseData playerData = new PlayerBaseData();
-
-		populateDescriptionUI(vbox_playerDescription, magicka1, deck1, playerData);
-		populateDescriptionUI(vbox_opponentPlayerDescription, magicka2, deck2, playerData);
 	}
 
 }

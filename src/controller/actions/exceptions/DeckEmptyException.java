@@ -1,11 +1,12 @@
-package model.cardlists;
+package controller.actions.exceptions;
 
 import model.player.Player;
 
-public class HandFullException extends Exception {
+public class DeckEmptyException extends Exception{
+	
 	private Player player;
 
-	public HandFullException(Player player)
+	public DeckEmptyException(Player player)
 	{
 		this.player = player;
 	}
@@ -14,6 +15,5 @@ public class HandFullException extends Exception {
 	{
 		return player;
 	}
-
 
 }

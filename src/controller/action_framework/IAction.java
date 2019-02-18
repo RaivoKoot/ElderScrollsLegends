@@ -6,7 +6,7 @@ import model.game.EventType;
 
 public abstract class IAction {
 	private boolean repetitive;
-	private IState source;
+	private Event source;
 	private EventType trigger;
 
 	public IAction(Event source, boolean repetitive, EventType trigger)
@@ -32,12 +32,12 @@ public abstract class IAction {
 		return ((Event) currentEvent).getType() == trigger;
 	}
 
-	public IState getSource()
+	public Event getSource()
 	{
 		return source;
 	}
 
-	public void setSource(IState source)
+	public void setSource(Event source)
 	{
 		this.source = source;
 	}

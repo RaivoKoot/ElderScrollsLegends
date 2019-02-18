@@ -66,9 +66,27 @@ public class Main extends Application {
 			
 			StartTurn action = new StartTurn();
 			p1.apply(action);
+			
+			StartTurn action1 = new StartTurn();
+			p1.apply(action1);
+			
+			StartTurn action2 = new StartTurn();
+			p1.apply(action2);
 
 			SummonCreature summon = new SummonCreature(p1.getHand(), p1.getFieldLane());
 			p1.getHand().get(0).apply(summon);
+			
+			StartTurn action4 = new StartTurn();
+			p2.apply(action4);
+			StartTurn action5 = new StartTurn();
+			p2.apply(action5);
+			
+			SummonCreature summon1 = new SummonCreature(p2.getHand(), p2.getFieldLane());
+			p2.getHand().get(0).apply(summon1);
+			
+			SummonCreature summon2 = new SummonCreature(p2.getHand(), p2.getFieldLane());
+			p2.getHand().get(0).apply(summon2);
+			
 		} catch (Exception e)
 		{
 			e.printStackTrace();

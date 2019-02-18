@@ -1,6 +1,7 @@
 package controller.actions.core;
 
 import controller.action_framework.IAction;
+import controller.actions.exceptions.ListFullException;
 import model.IState;
 import model.card.Card;
 import model.cardlists.CardList;
@@ -22,9 +23,12 @@ public class MoveCard extends IAction{
 	}
 
 	@Override
-	public void execute(IState state)
+	public void execute(IState state) throws ListFullException
 	{
 		Card card = (Card)state;
+		
+		if (!targetList.hasSpace())
+			throw new ListFullException(targetList);
 		
 		sourceList.remove(card);
 		targetList.add((Card)state);

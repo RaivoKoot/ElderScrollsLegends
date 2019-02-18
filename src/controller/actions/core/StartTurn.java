@@ -26,6 +26,12 @@ public class StartTurn extends IAction {
 		Event startTurnEvent = new Event(EventType.START_TURN, player, null);
 		CurrentEventManager.setCurrentEvent(startTurnEvent);
 
+		IAction gainMaxMagicka = new GainMaxMagicka(startTurnEvent, 1);
+		player.apply(gainMaxMagicka);
+
+		RefreshCurrentMagicka refreshMagicka = new RefreshCurrentMagicka(startTurnEvent);
+		player.getMagicka().apply(refreshMagicka);
+
 		IAction drawCard = new DrawCard(startTurnEvent);
 		player.apply(drawCard);
 	}

@@ -1,6 +1,7 @@
 package controller.actions.core;
 
 import controller.action_framework.IAction;
+import controller.actions.exceptions.NotEnoughMagickaException;
 import model.IState;
 import model.card.Card;
 import model.game.Event;
@@ -18,13 +19,17 @@ public class UseMagicka extends IAction {
 	}
 
 	@Override
-	public void execute(IState state)
+	public void execute(IState state) throws NotEnoughMagickaException
 	{
 		Card card = (Card) state;
 		int magickaCost = card.getMagicka_cost();
 
 		MagickaData player = card.getOwner().getMagicka();
 		int currentMagicka = player.getCurrentMagicka();
+		
+		if(currentMagicka < magickaCost)
+			throw new NotEnoughMagickaException(card.getOwner(), card);
+		
 		currentMagicka -= magickaCost;
 
 		player.setCurrentMagicka(currentMagicka);

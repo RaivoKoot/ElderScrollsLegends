@@ -1,6 +1,7 @@
 package controller.actions.core;
 
 import controller.action_framework.IAction;
+import controller.actions.exceptions.NotEnoughMagickaException;
 import model.IState;
 import model.card.Card;
 import model.cardlists.CardList;
@@ -27,19 +28,19 @@ public class SummonCreature extends IAction {
 	}
 
 	@Override
-	public void execute(IState state)
+	public void execute(IState state) throws NotEnoughMagickaException
 	{
 		Card card = (Card) state;
 
 		Event plannedEvent = (Event) super.getSource();
 		CardList targetLane = (CardList) plannedEvent.getTarget();
 		CardList hand = (CardList) plannedEvent.getSource();
-
+		
+		UseMagicka payMagicka = new UseMagicka(plannedEvent);
+		card.apply(payMagicka);
+		
 		MoveCard moveList = new MoveCard(null, false, null, hand, targetLane);
 		card.apply(moveList);
-
-		UseMagicka payMagicka = new UseMagicka(null);
-		card.apply(payMagicka);
 
 		plannedEvent.setSource(card);
 
